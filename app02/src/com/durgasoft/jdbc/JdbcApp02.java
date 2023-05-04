@@ -36,7 +36,7 @@ public class JdbcApp02 {
 		 String tname= br.readLine();
 		 String query = "create table " +tname+"(ENO number(3) primary key , ENAME varchar2(20),ESAL float(5),EADD varchar2(10))";
 		 st.executeUpdate(query);
-		 System.out.println("table"+tname+"created1 successfully");
+		 System.out.println("table"+tname+"created successfully");
 		//Close the resources
 		st.close();
 		con.close();
