@@ -1,0 +1,10 @@
+<struts-config>
+	<form-beans>
+		<form-bean name="Std" type="formbeans.Student"/>
+	</form-beans>
+	<action-mappings>
+		<action path="/StudentReg" name="Std" scope="session" validate="true" input="/index.jsp" type="controller.StudentRegController"/>
+		<forward-name name="success" path="/success.jsp"></forward-name>
+	</action-mappings>
+	<messgae-resources parameter="Messages"></messgae-resources>
+</struts-config>

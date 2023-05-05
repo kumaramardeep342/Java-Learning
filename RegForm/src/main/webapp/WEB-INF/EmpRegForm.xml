@@ -1,0 +1,82 @@
+<!DOCTYPE form-validation PUBLIC
+        "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+        "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+<form-validation>
+	<!-- common validations for all locale -->
+		<formset>
+			<form name="RF">
+				<field property="id_e" depends="intRange">
+					<arg key="id_e"/>
+					<arg key="${var:min}" resource="fase" />
+					<arg key="${var:max}" resource="fase"/>
+					<var>
+						<var-name>min</var-name>
+						<var-value>111</var-value>
+					</var>
+					<var>
+						<var-name>max</var-name>
+						<var-value>999</var-value> 
+					</var>
+				</field>
+				<field property="name_e" depends="required">
+					<arg key="name_e" resource="false"/>
+				</field>
+				<field property="email_e" depends="required,email">
+					<arg key="email_e" resource="false"/>
+				</field>
+				<field property="creditcard_e" depends="creditCard">
+					<arg key="creditcard_e" resource="false"/>
+				</field>
+			</form>
+		</formset>
+		<!-- Indian mobile & Salary validation -->
+		<formset language="en" country="IN">
+			<form name="RF">
+				<field property="salary_e" depends="floatRange">
+					<arg key="salary_e"/>
+					<arg key="${var:min}" resource="fase" />
+					<arg key="${var:max}" resource="fase"/>
+					<var>
+						<var-name>min</var-name>
+						<var-value>10000.5</var-value>
+					</var>
+					<var>
+						<var-name>max</var-name>
+						<var-value>200000.5</var-value> 
+					</var>
+				</field>
+				<field property="phone_e" depends="mask">
+					<arg key="phone_e" resource="false"/>
+					<var>
+						<var-name>mask</var-name>
+						<var-value>^[7-9]\d{9}$</var-value>
+					</var>
+				</field>
+			</form>
+		</formset>
+		<!-- US mobile & Salary validation -->
+		<formset language="en" country="US">
+			<form name="RF">
+				<field property="salary_e" depends="FloatRange">
+					<arg key="salary_e"/>
+					<arg key="${var:min}" resource="fase" />
+					<arg key="${var:max}" resource="fase"/>
+					<var>
+						<var-name>min</var-name>
+						<var-value>10000.5</var-value>
+					</var>
+					<var>
+						<var-name>max</var-name>
+						<var-value>200000.5</var-value> 
+					</var>
+				</field>
+				<field property="phone_e" depends="mask">
+					<arg key="phone_e" resource="false"/>
+					<var>
+						<var-name>mask</var-name>
+						<var-value>^[2-4]\d{9}$</var-value>
+					</var>
+				</field>
+			</form>
+		</formset>	
+</form-validation>

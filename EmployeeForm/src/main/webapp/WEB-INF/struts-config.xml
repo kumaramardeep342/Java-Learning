@@ -1,0 +1,9 @@
+<struts-config>
+	<form-beans>
+		<form-bean name="EMP" type="formbeans.Employee"></form-bean>
+	</form-beans>
+	<action-mappings>
+		<action path="/reg" name="EMP" validate="true" input="/index.jsp"></action>
+	</action-mappings>
+	<message-resources parameter="formbeans/Messages"></message-resources>
+</struts-config>
